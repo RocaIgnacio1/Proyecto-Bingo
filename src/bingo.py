@@ -1,5 +1,5 @@
-
-
+# Los 0 indican que la celda esta vacia
+# Los 1 indican que la celda esta ocupada
 def carton():
     carton = (
         (0,1,0,1,1,0,1,0,1),
