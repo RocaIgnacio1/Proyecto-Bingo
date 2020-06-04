@@ -19,4 +19,4 @@ los numeros crezcan de arriba a abajo.
 los numeros crezcan de izquierda a derecha.
 
 - Escribir un test que valide que los numeros no
-se repitan (SE DA POR HECHO DEBIDO A LOS 2 TEST ANTERIORES)
+se repitan (SE DA POR HECHO DEBIDO A LOS 2 TEST ANTERIORES).
