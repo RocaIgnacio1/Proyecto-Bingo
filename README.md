@@ -1,4 +1,4 @@
-
+[![Build Status](https://travis-ci.com/RocaIgnacio1/Bingo.svg?branch=master)](https://travis-ci.com/RocaIgnacio1/Bingo)
 
 Consignas:
 
