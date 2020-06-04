@@ -1,3 +1,5 @@
+
+
 Consignas:
 
 - Escribir un test que valide que el carton  tiene 15 celdas
