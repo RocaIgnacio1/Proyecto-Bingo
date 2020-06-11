@@ -1,5 +1,5 @@
 from src.bingo import carton
-from src.bingo import columnas
+
 
 def test_contar_celdas_ocupadas():
     mi_carton = carton()
@@ -11,6 +11,11 @@ def test_contar_celdas_ocupadas():
 
     assert contador == 15
 
+
+def columnas(carton, numero_de_columna):
+    columna = (carton[0][numero_de_columna], carton[1][numero_de_columna], carton[2][numero_de_columna])
+
+    return columna
 
 def test_al_menos_una_celda_ocupada_por_columna():
     mi_carton = carton()

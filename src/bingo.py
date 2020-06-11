@@ -7,9 +7,3 @@ def carton():
                 (0, 18,  0,  0, 49,  0,  0, 79,  0)
     )
     return carton
-
-
-def columnas(carton, numero_de_columna):
-    columna = (carton[0][numero_de_columna], carton[1][numero_de_columna], carton[2][numero_de_columna])
-
-    return columna
