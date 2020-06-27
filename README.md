@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.com/RocaIgnacio1/Proyecto-Bingo.svg?branch=master)](https://travis-ci.com/RocaIgnacio1/Proyecto-Bingo)
 
-
+[![Coverage Status](https://coveralls.io/repos/github/RocaIgnacio1/Proyecto-Bingo/badge.svg?branch=master)](https://coveralls.io/github/RocaIgnacio1/Proyecto-Bingo?branch=master)
 
 
 
