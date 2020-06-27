@@ -1,21 +1,11 @@
-{
-  "language": "python",
-  "os": [
-    "linux"
-  ],
-  "dist": "xenial",
-  "python": [
-    "3.8",
-    "3.7",
-    "3.6"
-  ],
-  "install": [
-    "pip install pytest pytest-cov coveralls"
-  ],
-  "script": [
-    "pytest --cov=src/"
-  ],
-  "after_success": [
-    "coveralls"
-  ]
-}
+language: python
+
+install:
+    pip install pytest pytest-cov coveralls
+
+script:
+  - pytest
+    pytest --cov=src/
+
+after_success:
+    coveralls
