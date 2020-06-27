@@ -1,11 +1,5 @@
-from src.bingo import carton
+from src import bingo
 
-def test_sin_columnas_vacias():
-    mi_carton = carton()
-    check = 0
-
-    for columna in range(9):
-        if mi_carton[0][columna] > 0 and mi_carton[1][columna] > 0 and mi_carton[2][columna] > 0:
-            check = 1
-
-        assert check == 0
+mi_carton = bingo.carton
+def test_sin_columnas_completamente_ocupadas():
+    assert bingo.sin_columnas_completamente_ocupadas(mi_carton)

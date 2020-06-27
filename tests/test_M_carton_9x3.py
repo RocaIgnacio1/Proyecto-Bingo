@@ -1,9 +1,5 @@
-from src.bingo import carton
+from src import bingo
 
+mi_carton = bingo.carton
 def test_carton_9x3():
-    mi_carton = carton()
-
-    assert len(mi_carton) == 3
-    assert len(mi_carton[0]) == 9
-    assert len(mi_carton[1]) == 9
-    assert len(mi_carton[2]) == 9
+    assert bingo.carton_9x3(mi_carton)
