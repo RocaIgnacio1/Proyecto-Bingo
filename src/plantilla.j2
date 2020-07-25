@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Ewert&display=swap" rel="stylesheet">
+  <title>Bingo</title>
+
+  <style media="screen">
+    body {
+      font-family: 'Ewert', cursive;
+      font-size: 80px;
+    }
+
+    table.colapsado {
+      margin-top: 100px;
+      width: 100%;
+      background-color: #82E0AA;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      text-align: center;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      border: 5px solid #D1F2EB;
+    }
+    .vacio {
+      background-color: #FC8175;
+    }
+    .botonenviar {
+      color: white;
+      background-color: #00E8B4;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 15px 30px;
+      margin-top: 20px;
+    	transition: opacity 0.2s linear;
+
+
+      border: none;
+      border-radius: .5rem;
+      border: solid 1px white;
+
+      cursor: pointer;
+    }
+
+    .botonenviar:hover{
+    	opacity: 0.7;
+    }
+  </style>
+</head>
+
+<body>
+  <div class = "contenedor_tabla">
+    <table class="colapsado">
+    {% for fila in tabla %}
+    <tr>
+      {% for celda in fila %}
+      {% if celda == 0 %}
+        <td class="vacio"> 00 </td>
+      {% else %}
+        {% if celda > 0 and celda < 10 %}
+          <td> 0{{celda}} </td>
+        {% else %}
+          <td> {{celda}} </td>
+        {% endif %}
+      {% endif %}
+      {% endfor %}
+    </tr>
+    {% endfor %}
+    </table>
+  </div>
+</body>
+</html>

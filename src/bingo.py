@@ -14,12 +14,10 @@ def intentoCarton():
     while (numerosCarton < 15):
 
       contador = contador + 1
-
       if (contador == 50):
         return intentoCarton()
 
       numero = random.randint(1,90)
-
       columna = math.floor(numero / 10)
 
       if (columna == 9):
@@ -83,7 +81,6 @@ def numeros_del_1_al_90(mi_carton):
         for celda in fila:
             if celda < 0 and celda >= 91:
                 x=1
-
     return (x==0)
 
 #Esta funcion verifica que cada columna de un carton (contando de izquierda a derecha) contiene numeros que van del 1 al 9, 10 al 19, 20 al 29 ..., 70 al 79 y 80 al 90.
@@ -128,7 +125,6 @@ def contar_celdas_ocupadas(mi_carton):
         for celda in fila:
             if celda > 0:
                 contador = contador + 1
-
     if contador != 15:
         x=1
     return (x==0)
@@ -167,7 +163,6 @@ def sin_columnas_vacias(mi_carton):
 
         if check != 0:
             x=1
-
     return (x==0)
 
 #Esta funcion verifica que no pueden existir columnas con sus tres celdas ocupadas.
@@ -177,7 +172,6 @@ def sin_columnas_completamente_ocupadas(mi_carton):
     for columna in range(9):
         if mi_carton[0][columna] > 0 and mi_carton[1][columna] > 0 and mi_carton[2][columna] > 0:
             check = 1
-
         if check != 0:
             x=1
 
@@ -201,10 +195,8 @@ def tres_columnas_con_una_sola_fila_ocupada(mi_carton):
 
         if check == 1:
             confirmar = confirmar + 1
-
     if confirmar != 3:
         x=1
-
     return (x==0)
 
 
@@ -247,9 +239,7 @@ def no_puede_haber_una_fila_vacia(mi_carton):
             # Check es un contador de filas aceptadas
     if check != 3:
         x=1
-
     return (x==0)
-
 
 #Esta funcion verifica que cada carton es una matrix de 9 x 3.
 def carton_9x3(mi_carton):
@@ -263,7 +253,6 @@ def carton_9x3(mi_carton):
         x=1
     if len(mi_carton[2]) != 9:
         x=1
-
     return (x==0)
 
 def generar_carton_valido():
@@ -298,10 +287,5 @@ def generar_carton_valido():
         and
         carton_9x3(mi_carton) == True):
                 r=1
-                print('\n')
-                print('Cantidad de cartones invalidos antes del correcto:',cantidad_de_cartones_invalidos-1)
-                print('\n')
     return mi_carton
-
 carton = generar_carton_valido()
-imprimirCarton(carton)
