@@ -66,22 +66,17 @@ def intentoCarton():
 
 #Esta funcion imprime un carton.
 def imprimirCarton(mi_carton):
-    if generar_carton_valido(mi_carton):
-        for columna in range(3):
-            for fila in range(9):
-                print(carton[columna][fila], end = " ")
-            print('\n')
-        return 1
-    else:
-        return 0;
+    for fila in mi_carton:
+        print(fila)
 
 #Esta funcion verifica que los números del carton se encuentran en el rango 1 a 90.
 def numeros_del_1_al_90(mi_carton):
-	for fila in mi_carton:
-		for celda in fila:
-			if celda < 0 or celda > 90:
-				return False
-	return True
+    for fila in range(0,3):
+        for columna in range(0,9):
+            celda = mi_carton[fila][columna]
+            if celda < 0 or celda > 90:
+                return False
+    return True
 
 #Esta funcion verifica que cada columna de un carton (contando de izquierda a derecha) contiene numeros que van del 1 al 9, 10 al 19, 20 al 29 ..., 70 al 79 y 80 al 90.
 def aumentando_de_a_decenas(mi_carton):
@@ -118,12 +113,12 @@ def contar_celdas_ocupadas(mi_carton):
 def izquierda_derecha(mi_carton):
     auxiliar=0
     for fila in range(3):
-        for celda in range(8):
+        for celda in range(9):
             if mi_carton[fila][celda]!=0:
                 if auxiliar != 0:
-                    if mi_carton[fila][celda] <= auxiliar:
+                    if auxiliar >= mi_carton[fila][celda]:
                         return False
-                auxiliar=mi_carton[fila][celda]
+                auxiliar = mi_carton[fila][celda]
         auxiliar = 0
     return True
 
@@ -211,19 +206,12 @@ def no_puede_haber_una_fila_vacia(mi_carton):
 
 #Esta funcion verifica que cada carton es una matrix de 9 x 3.
 def carton_9x3(mi_carton):
-    cantidad_filas = 0
-    cantidad_columnas = 0
-    check = True
-    for columnas in mi_carton:
-        cantidad_filas = 0
-        for filas in columnas:
-            cantidad_filas = cantidad_filas + 1
-        if cantidad_filas != 9:
-            check = False
-        cantidad_columnas = cantidad_columnas + 1
-    if cantidad_columnas != 3:
-        check = False
-    return check
+    if len(mi_carton) != 3:
+        return False
+    for fila in mi_carton:
+        if len(fila) != 9:
+            return False
+    return True
 
 def generar_carton_valido():
     r=0
