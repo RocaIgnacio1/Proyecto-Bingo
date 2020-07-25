@@ -66,13 +66,14 @@ def intentoCarton():
 
 #Esta funcion imprime un carton.
 def imprimirCarton(carton):
-    for columna in range(3):
-        for fila in range(9):
-            if carton[columna][fila] > 9:
-                print(carton[columna][fila], end='   ')
-            if carton[columna][fila] <= 9:
-                print(carton[columna][fila], end='    ')
-        print('\n')
+    if generar_carton_valido(carton):
+        for columna in range(3):
+            for fila in range(9):
+                print(carton[columna][fila], end = " ")
+            print('\n')
+        return 1
+    else:
+        return 0;
 
 #Esta funcion verifica que los números del carton se encuentran en el rango 1 a 90.
 def numeros_del_1_al_90(mi_carton):
