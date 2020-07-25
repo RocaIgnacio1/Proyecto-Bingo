@@ -288,4 +288,3 @@ def generar_carton_valido():
                 r=1
     return mi_carton
 carton = generar_carton_valido()
-imprimirCarton(carton)
