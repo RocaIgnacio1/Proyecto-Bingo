@@ -65,41 +65,36 @@ def intentoCarton():
     return carton
 
 #Esta funcion imprime un carton.
-def imprimirCarton(carton):
-    for columna in range(3):
-        for fila in range(9):
-            if carton[columna][fila] > 9:
-                print(carton[columna][fila], end='   ')
-            if carton[columna][fila] <= 9:
-                print(carton[columna][fila], end='    ')
-        print('\n')
+def imprimirCarton(mi_carton):
+    if generar_carton_valido(mi_carton):
+        for columna in range(3):
+            for fila in range(9):
+                print(carton[columna][fila], end = " ")
+            print('\n')
+        return 1;
+    else
+        return 0;
 
 #Esta funcion verifica que los números del carton se encuentran en el rango 1 a 90.
 def numeros_del_1_al_90(mi_carton):
-    for fila in mi_carton:
-        for celda in fila:
+    for fila in range(0,3):
+        for columna in range(0,9):
+            celda = mi_carton[fila][columna]
             if celda < 0 or celda > 90:
                 return False
     return True
 
 #Esta funcion verifica que cada columna de un carton (contando de izquierda a derecha) contiene numeros que van del 1 al 9, 10 al 19, 20 al 29 ..., 70 al 79 y 80 al 90.
 def aumentando_de_a_decenas(mi_carton):
-    mayor = 0
-    menor = -10
+    menor = 1
+    mayor = 9
     for columna in range(9):
-        mayor = mayor + 10
-        menor = menor + 10
         for fila in range(3):
             if mi_carton[fila][columna] != 0:
-                if columna==0:
-                    if mi_carton[fila][columna] < 0 and mi_carton[fila][columna] >= mayor:
+                if mi_carton[fila][columna] < menor or mi_carton[fila][columna] > mayor:
                         return False;
-                elif columna==8:
-                    if mi_carton[fila][columna] < menor and mi_carton[fila][columna] > 90:
-                        return False;
-                else:
-                    if mi_carton[fila][columna] < menor and mi_carton[fila][columna] >= mayor:
-                        return False;
+        menor = mayor + 1
+        mayor = mayor + 10
     return True;
 
 #Esta funcion verifica que cada fila de un carton tiene exactamente 5 celdas ocupadas.
@@ -109,9 +104,7 @@ def exactamente_5_celdas_por_fila(mi_carton):
         for columna in range(9):
             if mi_carton[fila][columna] > 0:
                 check = check + 1
-        if check != 5:
-            return False
-    return True
+    return check == 5
 
 #Esta funcion verifica que cada carton tiene 15 celdas ocupadas.
 def contar_celdas_ocupadas(mi_carton):
@@ -120,9 +113,7 @@ def contar_celdas_ocupadas(mi_carton):
         for celda in fila:
             if celda > 0:
                 contador = contador + 1
-    if contador != 15:
-        return False
-    return True
+    return contador == 15
 
 #Esta funcion verifica que los números de las columnas izquierdas son menores que los de las columnas a la derecha.
 def izquierda_derecha(mi_carton):
@@ -130,8 +121,9 @@ def izquierda_derecha(mi_carton):
         auxiliar=0
         for celda in range(8):
             if mi_carton[fila][celda]!=0:
-                if mi_carton[fila][celda] <= auxiliar:
-                    return False
+                if auxiliar != 0:
+                    if mi_carton[fila][celda] <= auxiliar:
+                        return False
                 auxiliar=mi_carton[fila][celda]
     return True
 
@@ -152,10 +144,7 @@ def sin_columnas_vacias(mi_carton):
         check = 1
         if mi_carton[0][columna] > 0 or mi_carton[1][columna] > 0 or mi_carton[2][columna] > 0:
             check = 0
-
-        if check != 0:
-            return False
-    return True
+    return check == 0
 
 #Esta funcion verifica que no pueden existir columnas con sus tres celdas ocupadas.
 def sin_columnas_completamente_ocupadas(mi_carton):
@@ -163,10 +152,7 @@ def sin_columnas_completamente_ocupadas(mi_carton):
     for columna in range(9):
         if mi_carton[0][columna] > 0 and mi_carton[1][columna] > 0 and mi_carton[2][columna] > 0:
             check = 1
-        if check != 0:
-            return False
-
-    return True
+    return check == 0
 
 #Esta funcion verifica que cada carton debe tener 3 y solo 3 columas con solo una celda ocupada.
 def tres_columnas_con_una_sola_fila_ocupada(mi_carton):
@@ -185,9 +171,7 @@ def tres_columnas_con_una_sola_fila_ocupada(mi_carton):
 
         if check == 1:
             confirmar = confirmar + 1
-    if confirmar != 3:
-        return False
-    return True
+    return confirmar == 3
 
 #Esta funcion verifica que en una fila no existen más de dos celdas vacías consecutivas.
 def en_una_fila_no_existen_masde2_celdas_vacias_consecutivas(mi_carton):
@@ -223,21 +207,20 @@ def no_puede_haber_una_fila_vacia(mi_carton):
         if(contador >= 1):
             check = check + 1
             # Check es un contador de filas aceptadas
-    if check != 3:
-        return False
-    return True
+    return check == 3
 
 #Esta funcion verifica que cada carton es una matrix de 9 x 3.
 def carton_9x3(mi_carton):
+    auxiliar = 0
     if len(mi_carton) != 3:
-        x=1
+        auxiliar = 1
     if len(mi_carton[0]) != 9:
-        x=1
+        auxiliar = 1
     if len(mi_carton[1]) != 9:
-        x=1
+        auxiliar = 1
     if len(mi_carton[2]) != 9:
-        return False
-    return True
+        auxiliar = 1
+    return auxiliar == 0
 
 def generar_carton_valido():
     r=0
