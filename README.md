@@ -29,11 +29,27 @@ Escrito por: Ignacio Roca. Con la ayuda de Mariano Dagostino.
 # Uso del Proyecto
 
 Para clonarlo:
-git clone https://github.com/RocaIgnacio1/Proyecto-Bingo
+```
+git clone https://github.com/RocaIgnacio1/Proyecto-Bingo.git
+```
 
-Una vez clonado, ejecute:
-python src/bingo.py
+Una vez clonado:
+
+Para generar carton por consola, ejecute lo siguiente en consola:
+```
+python bingo_consola.py
+```
+
+Para generar carton via WEB, ejecute lo siguiente en consola:
+```
+python bingo-web.py
+```
+Y luego abra el archivo bingo.html con algun navegador.
 
 
 
+# Ejemplo via WEB
 ![alt text](https://github.com/RocaIgnacio1/Proyecto-Bingo/blob/master/imagenes/bingo-web.jpg?raw=true)
+
+# Ejemplo por consola
+![alt text](https://github.com/RocaIgnacio1/Proyecto-Bingo/blob/master/imagenes/bingo_consola.jpg?raw=true)
