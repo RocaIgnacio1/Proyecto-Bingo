@@ -258,10 +258,8 @@ def carton_9x3(mi_carton):
 
 def generar_carton_valido():
     r=0
-    cantidad_de_cartones_invalidos=0
     while(r==0):
         mi_carton = intentoCarton()
-        cantidad_de_cartones_invalidos = cantidad_de_cartones_invalidos + 1
         if (numeros_del_1_al_90(mi_carton) == True
         and
         aumentando_de_a_decenas(mi_carton) == True
@@ -290,3 +288,4 @@ def generar_carton_valido():
                 r=1
     return mi_carton
 carton = generar_carton_valido()
+imprimirCarton(carton)
