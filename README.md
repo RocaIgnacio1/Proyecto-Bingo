@@ -2,6 +2,8 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/RocaIgnacio1/Proyecto-Bingo/badge.svg?branch=master)](https://coveralls.io/github/RocaIgnacio1/Proyecto-Bingo?branch=master)
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/RocaIgnacio1/Proyecto-Bingo/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/RocaIgnacio1/Proyecto-Bingo/?branch=master)
+
 
 
 # Bingo
