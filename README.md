@@ -33,3 +33,7 @@ git clone https://github.com/RocaIgnacio1/Proyecto-Bingo
 
 Una vez clonado, ejecute:
 python src/bingo.py
+
+
+
+![alt text](https://github.com/RocaIgnacio1/Proyecto-Bingo/blob/master/imagenes/bingo-web.jpg?raw=true)
